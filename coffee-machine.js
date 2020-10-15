@@ -23,13 +23,20 @@ function makeCoffeeMachine(beanType, waterLevel = 5) {
             machine.waterLevel++
         }
     };
-    machine.makeCoffee = function (bean) {
-        if (machine.waterLevel >= 1 && bean === "Espresso") {
-            machine.waterLevel--;
-            return "An Espresso made with <whatever beans>";
-        } else if (machine.waterLevel === 0) {
+    machine.makeCoffee = function (coffee) {
+        if (machine.waterLevel === 0) {
             return "Please add water";
         }
+        machine.waterLevel--;
+        if (machine.waterLevel >= 1 && coffee === "Espresso") {
+            return `An Espresso made with ${beanType}`;
+        }
+        // if (machine.waterLevel >= 1 && bean === "Espresso") {
+        //     machine.waterLevel--;
+        //     return "An Espresso made with <whatever beans>";
+        // } else if (machine.waterLevel === 0) {
+        //     return "Please add water";
+        // }
 
     }
 

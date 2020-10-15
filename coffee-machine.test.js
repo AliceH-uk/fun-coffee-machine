@@ -55,13 +55,13 @@ describe("Coffee Machine", () => {
     });
     // This test isn't working .... I need to make the waterLevel go down when asn espresso is made!
 
-    // test("The makeCoffee method returns An Espresso made with <whatever beans> if invoked with a string of Espresso and the waterLevel reduces by 1", () => {
-    //     const wakeUpMachine = makeCoffeeMachine("Java Lava");
-    //     wakeUpMachine.addWater()
-    //     wakeUpMachine.makeCoffee("Espresso")
-    //     console.log(wakeUpMachine.makeCoffee("Espresso"))
-    //     // expect(wakeUpMachine.waterLevel).toBe(0);
-    //     expect(wakeUpMachine.makeCoffee("Espresso")).toBe("An Espresso made with <whatever beans>");
-    // });
+    test("The makeCoffee method returns An Espresso made with <whatever beans> if invoked with a string of Espresso and the waterLevel reduces by 1", () => {
+        const wakeUpMachine = makeCoffeeMachine("Java Lava");
+        wakeUpMachine.addWater()
+        wakeUpMachine.makeCoffee("Espresso")
+        console.log(wakeUpMachine.makeCoffee("Espresso"))
+        // expect(wakeUpMachine.waterLevel).toBe(0);
+        expect(wakeUpMachine.makeCoffee("Espresso")).toBe("An Espresso made with <whatever beans>");
+    });
 });
 
