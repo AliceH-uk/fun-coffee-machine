@@ -18,30 +18,26 @@ function makeCoffeeMachine(beanType, waterLevel = 5) {
     machine.beans = beanType
     machine.waterLevel = 0
     machine.maxWaterLevel = waterLevel
-    machine.addWater = function () {
-        if (machine.waterLevel < machine.maxWaterLevel) {
-            machine.waterLevel++
-        }
-    };
-    machine.makeCoffee = function (coffee) {
-        if (machine.waterLevel === 0) {
-            return "Please add water";
-        }
-        machine.waterLevel--;
-        if (machine.waterLevel >= 1 && coffee === "Espresso") {
-            return `An Espresso made with ${beanType}`;
-        }
-        // if (machine.waterLevel >= 1 && bean === "Espresso") {
-        //     machine.waterLevel--;
-        //     return "An Espresso made with <whatever beans>";
-        // } else if (machine.waterLevel === 0) {
-        //     return "Please add water";
-        // }
-
-    }
-
+    machine.addWater = addWater
+    machine.makeCoffee = makeCoffee
 
     return machine
+}
+
+function addWater() {
+    if (this.waterLevel < this.maxWaterLevel) {
+        this.waterLevel++
+    }
+}
+function makeCoffee(coffeeOrder) {
+    if (this.waterLevel < 1) return "Please add water";
+    this.waterLevel--;
+
+    if (coffeeOrder !== "Espresso") {
+        return `An americano made with ${this.beans}`;
+    } else {
+        return `An ${coffeeOrder} made with ${this.beans}`;
+    }
 }
 
 module.exports = makeCoffeeMachine
