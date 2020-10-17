@@ -34,7 +34,7 @@ function makeCoffee(coffeeOrder) {
     this.waterLevel--;
 
     if (coffeeOrder !== "Espresso") {
-        return `An americano made with ${this.beans}`;
+        return `An Americano made with ${this.beans}`;
     } else {
         return `An ${coffeeOrder} made with ${this.beans}`;
     }

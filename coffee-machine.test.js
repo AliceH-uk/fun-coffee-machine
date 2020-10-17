@@ -80,7 +80,7 @@ describe("The Coffee Machine", () => {
             const wakeUpMachine = makeCoffeeMachine("Java Lava");
             wakeUpMachine.addWater()
             wakeUpMachine.addWater()
-            expect(wakeUpMachine.makeCoffee("Americano")).toBe("An americano made with Java Lava");
+            expect(wakeUpMachine.makeCoffee("Americano")).toBe("An Americano made with Java Lava");
         });
 
         test("The coffee machine shares methods in creating different coffees", () => {
@@ -92,4 +92,17 @@ describe("The Coffee Machine", () => {
         });
     })
 });
+
+// const alicesMachine = makeCoffeeMachine("Java Lava", 6)
+// console.log(alicesMachine)
+// alicesMachine.addWater();
+// alicesMachine.addWater();
+// alicesMachine.addWater();
+// alicesMachine.addWater();
+// console.log(alicesMachine)
+// console.log(alicesMachine.makeCoffee("Espresso"))
+// console.log(alicesMachine.makeCoffee("Espresso"))
+// console.log(alicesMachine.makeCoffee("Espresso"))
+// console.log(alicesMachine.makeCoffee("Coffee"))
+// console.log(alicesMachine.makeCoffee("Espresso"))
 
