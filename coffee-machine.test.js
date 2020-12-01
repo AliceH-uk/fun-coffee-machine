@@ -93,16 +93,16 @@ describe("The Coffee Machine", () => {
     })
 });
 
-// const alicesMachine = makeCoffeeMachine("Java Lava", 6)
-// console.log(alicesMachine)
-// alicesMachine.addWater();
-// alicesMachine.addWater();
-// alicesMachine.addWater();
-// alicesMachine.addWater();
-// console.log(alicesMachine)
-// console.log(alicesMachine.makeCoffee("Espresso"))
-// console.log(alicesMachine.makeCoffee("Espresso"))
-// console.log(alicesMachine.makeCoffee("Espresso"))
-// console.log(alicesMachine.makeCoffee("Coffee"))
-// console.log(alicesMachine.makeCoffee("Espresso"))
+const alicesMachine = makeCoffeeMachine("Java Lava", 6)
+console.log("Alice's Coffee Maker - NB: water level at 0 --->", alicesMachine)
+alicesMachine.addWater();
+alicesMachine.addWater();
+alicesMachine.addWater();
+alicesMachine.addWater();
+console.log("Alice's Coffee Maker - NB: water level increased to 4 --->", alicesMachine)
+console.log("Let's make an espresso! --->", alicesMachine.makeCoffee("Espresso"))
+console.log("And another one! --->", alicesMachine.makeCoffee("Espresso"))
+console.log("How about a third espresso? --->", alicesMachine.makeCoffee("Espresso"))
+console.log("Just an Americano this time please! --->", alicesMachine.makeCoffee("Coffee"))
+console.log("One more? No, not this time the water level decreases every time a coffee is made until there is none left and a message appears... --->", alicesMachine.makeCoffee("Espresso"))
 

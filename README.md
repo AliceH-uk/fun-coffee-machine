@@ -1,86 +1,40 @@
-# fun-coffee-machine
+# Coffee Maker OOP Project
 
-# OOP day 2 Morning Task
-​
-ヽ( ´O ｀)ゞ mornin’~
-​
-This mornings task is to use the skills you learned yesterday about using and testing factory functions to create a coffee machine maker function to the specification below:
-​
-Don't forget to use TDD to solve this problem!
-​
-(_^｡^_)Rise (_^o^_)And ＼(_^0^_)／Shine!!
-​
-## `makeCoffeeMachine()`
-​
-should:
-​
-return an Object
-​
-```js
-typeof coffeeMachineMaker(); // -----> 'object'
-```
-​
-have a beans property which is equal to the first argument it is given
-​
-```js
-const wakeUpMachine = makeCoffeeMachine("Java Lava");
-wakeUpMachine.beans; // -----> 'Java Lava'
-```
-​
-have a waterLevel property which instantiates as 0
-​
-```js
-wakeUpMachine.waterLevel; // -----> 0
-```
-​
-have a maxWaterLevel property that is 5 by default but can be passed as an argument
-​
-```js
-const wakeUpMachine = makeCoffeeMachine("Java Lava");
-wakeUpMachine.maxWaterLevel; //----- 5
-const biggerWakeUpMachine = makeCoffeeMachine("Java Lava", 10);
-biggerWakeUpMachine.maxWaterLevel; // ----> 10
-```
-​
-have an `addWater` method which will increase the waterLevel by 1 each time its called but not above the maxWaterLevel
-​
-```js
-wakeUpMachine.addWater();
-​
-wakeUpMachine.waterLevel; //----> 1
-​
-wakeUpMachine.addWater();
-wakeUpMachine.addWater();
-wakeUpMachine.addWater();
-wakeUpMachine.addWater();
-wakeUpMachine.addWater();
-​
-wakeUpMachine.waterLevel; //----> 5
-```
-​
-have a `makeCoffee` method which will
-​
-`return`: `"Please add water"` if the waterLevel is 0
-​
-`return`: `"An Espresso made with <whatever beans>"` if invoked with a string of `"Espresso"`
-​
-`return`: `"An Americano made with <whatever beans>"` if invoked with anything else or no arguments
-reduce the waterLevel by each time its called but not below 0
-​
-```js
-const wakeUpMachine = makeCoffeeMachine("Java Lava");
-​
-wakeUpMachine.makeCoffee(); // -----> "Please add water"
-​
-wakeUpMachine.addWater();
-wakeUpMachine.makeCoffee(); // -----> "An Americano made with Java Lava"
-​
-wakeUpMachine.waterLevel; // ----> 0
-​
-wakeUpMachine.addWater();
-wakeUpMachine.makeCoffee("Espresso"); // -----> "An Espresso made with Java Lava"
-```
-Collapse
+## About the Project
+This was a short morning project to create a coffee maker using OOP and full TDD.
+
+## Set up
+In order the see an example of the coffee maker in action please run `npm install` to install the required dev dependencies.
+
+Once Jest has been installed you can run `npm run test` which will log an example of the coffee maker being used to make a number of morning coffees (with short explanations!) to your console!
+
+## The Coffee Maker
+
+My coffee maker takes beans and can be filled up with water. It has an "add water" function which increases the water level to a given maximum and a "make coffee" function which makes a coffee and decreases the water level by one each time until it is empty when a "Please add water" message appears.
+
+Example Coffee Maker
+
+`{
+      beans: 'Java Lava',
+      waterLevel: 0,
+      maxWaterLevel: 6,
+      addWater: [Function: addWater],
+      makeCoffee: [Function: makeCoffee]
+    }`
+
+Example Coffee Message
+
+`An Espresso made with Java Lava`
+
+Another Coffee Message
+
+`An Americano made with Java Lava`
+
+Oh dear, we're out of water!
+
+`Please add water`
 
 
-
+## Future plans for the project:
+1. Although this is a very simple project I really liked the idea behind it and I think there are so many more functions I could add! It would be fun to add a coffee grinding function (medium/ coarse/ smooth) and perhaps a frothy milk function too.
+2. I have thought about creating a visual functional coffee machine using CSS so that the console log messages which are created when the functions are run could be shown on the front of the machine. Maybe when the coffee is being made some liquid could pour into a cup or steam could appear out of the top of the machine!
